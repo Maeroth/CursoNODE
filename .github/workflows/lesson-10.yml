@@ -1,0 +1,33 @@
+name: CI - Lesson10
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+      branches:
+        - master
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./seed 
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v3
+
+      - name: Install Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+      - name: Run integration tests
+        run: npm run test:integration
