@@ -10,10 +10,10 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./seed
+    #defaults:
+    #  run:
+    #    shell: bash
+    #    working-directory: ./seed
 
     steps:
       - name: Clone repo
