@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./seed-project 
+        shell: bash
+        working-directory: ./seed
 
     steps:
       - name: Clone repo
